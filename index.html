@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post & Comment Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">Quản lý Posts và Comments</h1>
+
+        <div class="card">
+            <h2 class="card-title">Danh sách Posts</h2>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tiêu đề</th>
+                        <th>Lượt xem</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+
+                </tbody>
+            </table>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="id_txt">ID</label>
+                    <input type="text" id="id_txt" class="form-control" placeholder="Để trống khi tạo mới">
+                </div>
+                <div class="form-group">
+                    <label for="title_txt">Tiêu đề</label>
+                    <input type="text" id="title_txt" class="form-control" placeholder="Nhập tiêu đề">
+                </div>
+                <div class="form-group">
+                    <label for="view_txt">Lượt xem</label>
+                    <input type="text" id="view_txt" class="form-control" placeholder="Nhập views">
+                </div>
+                <div class="form-group mb-3">
+                    <button type="button" class="btn btn-primary" onclick="Save()">Lưu và cập nhật post</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="card-title">Danh sách Comments</h2>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Post ID</th>
+                        <th>Nội dung</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody id="comments-body">
+
+                </tbody>
+            </table>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="comment_id_txt">ID</label>
+                    <input type="text" id="comment_id_txt" class="form-control" placeholder="Để trống khi tạo mới">
+                </div>
+                <div class="form-group">
+                    <label for="comment_postId_txt">Post ID</label>
+                    <input type="text" id="comment_postId_txt" class="form-control" placeholder="Nhập ID của post">
+                </div>
+                <div class="form-group">
+                    <label for="comment_text_txt">Nội dung</label>
+                    <input type="text" id="comment_text_txt" class="form-control" placeholder="Nhập nội dung comment">
+                </div>
+                <div class="form-group mb-3">
+                    <button type="button" class="btn btn-primary" onclick="SaveComment()">Lưu và cập nhật comment</button>
+                </div>
+            </div>
+            <div id="comment_error" style="color: #dc3545; font-size: 13px; margin-top: 4px;"></div>
+        </div>
+    </div>
+</body>
+</html>
